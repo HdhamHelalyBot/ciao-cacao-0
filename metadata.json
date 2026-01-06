@@ -1,0 +1,5 @@
+{
+  "name": "Ciao Cacao Restaurant Menu",
+  "description": "A simple and elegant web application to display the menu for Ciao Cacao restaurant, featuring a PDF viewer and a dark/light mode toggle for comfortable viewing.",
+  "requestFramePermissions": []
+}
