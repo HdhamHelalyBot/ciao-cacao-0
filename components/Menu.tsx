@@ -14,7 +14,7 @@ const slugify = (text: string) => {
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-') 
-    .replace(/[^\w\-]+/g, '')
+    .replace(/[^\w\-\u0600-\u06FF]+/g, '')
     .replace(/\-\-+/g, '-');
 };
 
@@ -41,7 +41,7 @@ const Menu: React.FC<MenuProps> = ({ language }) => {
               {category.items.map((item, itemIndex) => (
                 <div key={itemIndex} className="bg-white dark:bg-gray-800/50 p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-[1.01] hover:shadow-lg">
                   <div className="flex justify-between items-start gap-4">
-                    {!isArabic && (
+                    {isArabic && (
                       <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
                         {item.price}
                       </p>
@@ -56,7 +56,7 @@ const Menu: React.FC<MenuProps> = ({ language }) => {
                          </p>
                       )}
                     </div>
-                     {isArabic && (
+                     {!isArabic && (
                       <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
                         {item.price}
                       </p>
